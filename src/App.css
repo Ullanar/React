@@ -1,25 +1,3 @@
-
-.header {
-  grid-area: header;
-  background: aquamarine;
-}
-
-.footer {
-  grid-area: footer;
-  background: coral;
-}
-
-.menu {
-  text-align: center;
-  grid-area: menu;
-  background: lightblue;
-}
-
-.content {
-  grid-area: content;
-  background: blanchedalmond;
-}
-
 .app-wrapper{
   display: grid;
   grid-template-areas: "header header "

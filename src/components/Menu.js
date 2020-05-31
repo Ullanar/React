@@ -1,8 +1,9 @@
 import React from 'react';
+import css from './Menu.module.css'
 
 function Menu() {
     return(
-        <aside className='menu'>
+        <aside className={css.menu}>
             <ul>
                 Menu
                 <li><a href='#s'>My profile</a> </li>

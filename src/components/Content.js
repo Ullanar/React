@@ -1,9 +1,11 @@
 import React from 'react';
+import css from './Content.modele.css'
+
 
 function Content() {
     return(
-        <div className='content'>
-            <img src='https://s3.amazonaws.com/images.seroundtable.com/google-css-images-1515761601.jpg' />
+        <div className={css.content}>
+            <img className={css.image} src='https://www.onlygfx.com/wp-content/uploads/2017/12/origami-banner-rectangle-2-1024x295.png' width="100%" height="170px"/>
 
             <div>ava + description</div>
             <div>text area</div>

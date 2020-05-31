@@ -1,0 +1,5 @@
+.menu {
+    text-align: center;
+    grid-area: menu;
+    background: lightblue;
+}

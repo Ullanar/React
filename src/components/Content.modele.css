@@ -1,0 +1,9 @@
+.content {
+    grid-area: content;
+    background: blanchedalmond;
+}
+
+.image{
+    width: 100px;
+    height: 15px;
+}
