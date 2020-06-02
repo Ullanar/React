@@ -1,9 +1,9 @@
 import React from 'react';
 
-function userDescription() {
+function UserDescription() {
     return(
       <div>
-          <div className='userDescription'>
+          <div className='Description'>
               <ul>
                   <li>Name</li>
                   <li>Age</li>
@@ -15,4 +15,4 @@ function userDescription() {
     );
 }
 
-export default userDescription();
+export default UserDescription;
