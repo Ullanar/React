@@ -3,6 +3,7 @@ import css from './Content.module.css'
 import Avatar from "./profileAvatar/Ava";
 import Description from "./profileDescription/Description";
 import CreateNewPost from  './createNewPost/Textarea'
+import Post from "./Posts/Post";
 
 
 function Content() {
@@ -13,8 +14,12 @@ function Content() {
             <Description />
             <br/>
             <CreateNewPost />
-            <div>Post 1</div>
-            <div>Post 2</div>
+            <br/>
+
+            <Post />
+            <Post />
+            <Post />
+            <Post />
 
         </div>
     );
