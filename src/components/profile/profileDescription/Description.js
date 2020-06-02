@@ -1,17 +1,17 @@
 import React from 'react';
 
-function UserDescription() {
-    return(
-      <div>
-          <div className='Description'>
-              <ul>
-                  <li>Name</li>
-                  <li>Age</li>
-                  <li>City</li>
-                  <li>Education</li>
-              </ul>
-          </div>
-      </div>
+function UserDescription(props) {
+    return (
+        <div>
+            <div className='Description'>
+                <ul>
+                    <li>Name: {props.name}</li>
+                    <li>Age: {props.age}</li>
+                    <li>City: {props.city}</li>
+                    <li>Education: {props.education}</li>
+                </ul>
+            </div>
+        </div>
     );
 }
 
