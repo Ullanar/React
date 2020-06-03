@@ -6,11 +6,13 @@ function Menu() {
     return (
         <aside className={css.menu}>
             <ul>
-                Menu
-                <li><NavLink to='/profile'>My profile</NavLink></li>
-                <li><NavLink to='/messages'>Messages</NavLink></li>
-                <li><NavLink to='/faq'>FAQ</NavLink></li>
-                <li><NavLink to='/news'>News</NavLink></li>
+                <div className={css.contents}> Menu</div>
+                <div className={css.item}>
+                    <li><NavLink to='/profile' activeClassName={css.active}>My profile</NavLink></li>
+                    <li><NavLink to='/messages' activeClassName={css.active}>Messages</NavLink></li>
+                    <li><NavLink to='/faq' activeClassName={css.active}>FAQ</NavLink></li>
+                    <li><NavLink to='/news' activeClassName={css.active}>News</NavLink></li>
+                </div>
             </ul>
         </aside>
     );

@@ -2,4 +2,18 @@
     text-align: center;
     grid-area: menu;
     background: lightblue;
+    padding: 20px;
+}
+
+.contents{
+    font-size: large;
+    color: black;
+}
+
+.item {
+    color: azure;
+}
+
+.active {
+ color: dimgray;
 }
