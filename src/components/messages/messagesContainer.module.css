@@ -1,3 +1,6 @@
 .container{
     margin-left: 10px;
+    display: grid;
+    grid-template-columns: 2px 5fr;
 }
+
