@@ -1,10 +1,12 @@
 import React from 'react';
 import css from "./Faq.module.css";
 
-function Container() {
+function FaqContainer() {
     return(
         <div className={css.container}>
-            Messages
+            FAQ
         </div>
     );
 }
+
+export default FaqContainer;

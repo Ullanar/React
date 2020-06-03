@@ -6,10 +6,10 @@ function Menu() {
         <aside className={css.menu}>
             <ul>
                 Menu
-                <li><a href='#s'>My profile</a></li>
-                <li><a href='#s'>Messages</a></li>
-                <li><a href='#s'>News</a></li>
-                <li><a href='#s'>Donate</a></li>
+                <li><a href='/profile'>My profile</a></li>
+                <li><a href='/messages'>Messages</a></li>
+                <li><a href='/faq'>FAQ</a></li>
+                <li><a href='/news'>News</a></li>
             </ul>
         </aside>
     );

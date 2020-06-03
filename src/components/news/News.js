@@ -1,10 +1,12 @@
 import React from 'react';
 import css from "./News.module.css";
 
-function Container() {
+function NewsContainer() {
     return(
         <div className={css.container}>
-            Messages
+            News
         </div>
     );
 }
+
+export default NewsContainer;
