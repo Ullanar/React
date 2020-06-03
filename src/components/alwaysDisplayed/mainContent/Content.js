@@ -1,9 +1,9 @@
 import React from 'react';
 import css from './Content.module.css'
-import Avatar from "./profileAvatar/Ava";
-import Description from "./profileDescription/Description";
-import CreateNewPost from './createNewPost/Textarea'
-import Post from "./Posts/Post";
+import Avatar from "../../profile/profileAvatar/Ava";
+import Description from "../../profile/profileDescription/Description";
+import CreateNewPost from '../../profile/createNewPost/Textarea'
+import Post from "../../profile/Posts/Post";
 
 
 function Content() {
