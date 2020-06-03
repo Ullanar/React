@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import Header from "./components/alwaysDisplayed/Header";
+import Header from "./components/alwaysDisplayed/Header/Header";
 import Content from "./components/profile/Content";
-import Menu from "./components/alwaysDisplayed/Menu";
-import Footer from "./components/alwaysDisplayed/Footer";
+import Menu from "./components/alwaysDisplayed/NavMenu/Menu";
+import Footer from "./components/alwaysDisplayed/Footer/Footer";
 import Avatar from "./components/profile/profileAvatar/Ava";
 import Description from "./components/profile/profileDescription/Description";
 
