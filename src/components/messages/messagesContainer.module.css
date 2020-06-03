@@ -1,6 +1,16 @@
-.container{
-    margin-left: 10px;
+.container {
     display: grid;
-    grid-template-columns: 2px 5fr;
+    grid-template-columns: 2fr 5fr;
+    grid-template-areas: "dialogs messages ";
+}
+
+.dialogs{
+    grid-area: dialogs;
+    margin-left: 10px;
+}
+
+.messages {
+    grid-area: messages;
+    margin-left: 10px;
 }
 
