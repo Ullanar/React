@@ -7,12 +7,10 @@ function Menu() {
         <aside className={css.menu}>
             <ul>
                 <div className={css.contents}> Menu</div>
-                <div className={css.item}>
-                    <li><NavLink to='/profile' activeClassName={css.active}>My profile</NavLink></li>
-                    <li><NavLink to='/messages' activeClassName={css.active}>Messages</NavLink></li>
-                    <li><NavLink to='/faq' activeClassName={css.active}>FAQ</NavLink></li>
-                    <li><NavLink to='/news' activeClassName={css.active}>News</NavLink></li>
-                </div>
+                    <li><NavLink to='/profile' className ={css.item} activeClassName={css.active}>My profile</NavLink></li>
+                    <li><NavLink to='/messages' className ={css.item} activeClassName={css.active}>Messages</NavLink></li>
+                    <li><NavLink to='/faq' className ={css.item} activeClassName={css.active}>FAQ</NavLink></li>
+                    <li><NavLink to='/news' className ={css.item} activeClassName={css.active}>News</NavLink></li>
             </ul>
         </aside>
     );
