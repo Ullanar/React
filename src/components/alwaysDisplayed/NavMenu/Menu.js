@@ -1,15 +1,16 @@
 import React from 'react';
 import css from './Menu.module.css'
+import {NavLink} from "react-router-dom";
 
 function Menu() {
     return (
         <aside className={css.menu}>
             <ul>
                 Menu
-                <li><a href='/profile'>My profile</a></li>
-                <li><a href='/messages'>Messages</a></li>
-                <li><a href='/faq'>FAQ</a></li>
-                <li><a href='/news'>News</a></li>
+                <li><NavLink to='/profile'>My profile</NavLink></li>
+                <li><NavLink to='/messages'>Messages</NavLink></li>
+                <li><NavLink to='/faq'>FAQ</NavLink></li>
+                <li><NavLink to='/news'>News</NavLink></li>
             </ul>
         </aside>
     );

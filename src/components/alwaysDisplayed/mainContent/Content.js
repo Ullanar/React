@@ -7,17 +7,14 @@ import FaqContainer from "../../faq/FAQ";
 import {BrowserRouter, Route} from "react-router-dom";
 
 
-
 function Content() {
     return (
-        <BrowserRouter>
-        <div className={css.content}>
-            <Route path = '/profile' component = {ProfileContainer} />
-            <Route path = '/messages' component = {MessagesContainer} />
-            <Route path = '/faq' component = {FaqContainer}/>
-            <Route path = '/news' component = {NewsContainer} />
-        </div>
-        </BrowserRouter>
+            <div className={css.content}>
+                <Route path='/profile' component={ProfileContainer}/>
+                <Route path='/messages' component={MessagesContainer}/>
+                <Route path='/faq' component={FaqContainer}/>
+                <Route path='/news' component={NewsContainer}/>
+            </div>
     );
 }
 
