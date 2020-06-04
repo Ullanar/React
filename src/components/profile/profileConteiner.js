@@ -16,7 +16,6 @@ function ProfileContainer() {
             <br/>
             <CreateNewPost/>
             <br/>
-
             <Post/>
             <Post/>
             <Post/>

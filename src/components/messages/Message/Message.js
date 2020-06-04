@@ -1,10 +1,10 @@
 import React from 'react';
 import css from './Message.module.css'
 
-function Message() {
+function Message(props) {
     return (
         <div className={css.item}>
-            <div>Message</div>
+            <div>{props.messageText}</div>
         </div>
     );
 }

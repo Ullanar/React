@@ -11,7 +11,8 @@
     .app-wrapper {
         grid-template-areas: "header" "menu" "content" "footer";
         grid-template-columns: 100%;
-        grid-template-rows: 100px 50px 1fr 100px;
+        grid-template-rows: 100px 150px 1fr 100px;
+
     }
 }
 

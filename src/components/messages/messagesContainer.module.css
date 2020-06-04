@@ -14,3 +14,11 @@
     margin-left: 10px;
 }
 
+.item {
+    text-decoration: none;
+    color: azure;
+}
+
+.active {
+    color: dimgray;
+}
