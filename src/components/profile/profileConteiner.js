@@ -6,7 +6,14 @@ import CreateNewPost from './createNewPost/Textarea'
 import Post from "./Posts/Post";
 
 
-function ProfileContainer() {
+function ProfileContainer(props) {
+
+    let posts = props.profilePageDate.postsContent
+        .map((post) =>  <Post postText = {post.post} />)
+
+    // let messagesDate = props.dialogsPageDate.messagesContent
+    //     .map((message) => <Message messageText={message.messageText}/>);
+
     return (
         <div className={css.content}>
             <img className={css.image}
@@ -16,10 +23,8 @@ function ProfileContainer() {
             <br/>
             <CreateNewPost/>
             <br/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
+            {posts}
+
 
         </div>
     );

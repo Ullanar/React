@@ -9,13 +9,14 @@ import {BrowserRouter, Route} from "react-router-dom";
 
 function Content(props) {
     return (
-            <div className={css.content}>
-                <Route path exact ='' component={ProfileContainer}/> {/*Отображается по дефолту*/}
-                <Route path='/profile' component={ProfileContainer}/>
-                <Route path='/messages' render={() => <MessagesContainer messageText = {props.messages} userDialogs = {props.userDialogs} />}/>
-                <Route path='/faq' component={FaqContainer}/>
-                <Route path='/news' component={NewsContainer}/>
-            </div>
+        <div className={css.content}>
+            <Route path exact='' render={() => <ProfileContainer
+                profilePageDate={props.profilePageDate}/>}/> {/*Отображается по дефолту*/}
+            <Route path='/profile' render={() => <ProfileContainer profilePageDate={props.profilePageDate}/>}/>
+            <Route path='/messages' render={() => <MessagesContainer dialogsPageDate={props.messagesPageDate}/>}/>
+            <Route path='/faq' render={() => <FaqContainer/>}/>
+            <Route path='/news' render={() => <NewsContainer/>}/>
+        </div>
     );
 }
 

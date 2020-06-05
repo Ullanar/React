@@ -6,8 +6,10 @@ import ChooseUser from "./ChooseUser/ChooseUser";
 
 function MessagesContainer(props) {
 
-    let userDate = props.userDialogs.map((dialog) => <ChooseUser userName={dialog.userName} dialogId={dialog.dialogId}/>);
-    let messagesData = props.messageText.map((message) => <Message messageText={message.messageText}/>);
+    let userDate = props.dialogsPageDate.dialogs
+        .map((dialog) => <ChooseUser userName={dialog.userName} dialogId={dialog.dialogId}/>);
+    let messagesDate = props.dialogsPageDate.messagesContent
+        .map((message) => <Message messageText={message.messageText}/>);
 
     return (
         <div className={css.container}>
@@ -19,7 +21,7 @@ function MessagesContainer(props) {
             </div>
 
             <div className={css.messages}>
-                {messagesData}
+                {messagesDate}
                 {/*Тут мы зафигачили массив messagesDate в разметку JSX*/}
             </div>
         </div>

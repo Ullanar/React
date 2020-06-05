@@ -12,7 +12,7 @@ function App(props) {
             <div className="app-wrapper">
                 <Header/>
                 <Menu/>
-                <Content messages = {props.messages} userDialogs = {props.userDialogs}/>
+                <Content messagesPageDate = {props.state.messagesPage} profilePageDate = {props.state.profilePage}/>
                 <Footer/>
             </div>
         </BrowserRouter>
