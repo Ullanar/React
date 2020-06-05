@@ -6,13 +6,13 @@ import Menu from "./components/alwaysDisplayed/NavMenu/Menu";
 import Footer from "./components/alwaysDisplayed/Footer/Footer";
 import {BrowserRouter} from "react-router-dom";
 
-function App() {
+function App(props) {
     return (
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
                 <Menu/>
-                <Content/>
+                <Content messages = {props.messages} userDialogs = {props.userDialogs}/>
                 <Footer/>
             </div>
         </BrowserRouter>
