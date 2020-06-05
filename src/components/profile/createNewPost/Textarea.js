@@ -7,7 +7,7 @@ function Textarea() {
     return (
         <div className={css.textarea}>
             <textarea>Create new post!</textarea>
-            <button>Submit</button>
+            <button onClick={() => {alert('test')}}>Submit</button>
         </div>
     );
 }
