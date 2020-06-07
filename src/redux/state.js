@@ -1,4 +1,6 @@
-import {renderEntireTree} from "../render";
+function renderEntireTree() {
+    console.log('');
+}
 
 let state = {
     messagesPage: {
@@ -45,6 +47,10 @@ export let addPost = () => {
 export function updatePostChange(newTextDisplay) {
     state.profilePage.newPostMessageDisplay = newTextDisplay;
     renderEntireTree(state)
+}
+
+export function subscribe(observer) {
+    renderEntireTree = observer;
 }
 
 export default state;
