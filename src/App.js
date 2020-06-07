@@ -5,6 +5,7 @@ import Content from "./components/alwaysDisplayed/mainContent/Content";
 import Menu from "./components/alwaysDisplayed/NavMenu/Menu";
 import Footer from "./components/alwaysDisplayed/Footer/Footer";
 import {BrowserRouter} from "react-router-dom";
+import {updatePostChange} from "./redux/state";
 
 function App(props) {
     return (
@@ -12,7 +13,10 @@ function App(props) {
             <div className="app-wrapper">
                 <Header/>
                 <Menu/>
-                <Content messagesPageDate = {props.state.messagesPage} profilePageDate = {props.state.profilePage}/>
+                <Content messagesPageData = {props.state.messagesPage}
+                         profilePageData = {props.state.profilePage}
+                         addPost = {props.addPost}
+                         updatePostChange = {props.updatePostChange}/>
                 <Footer/>
             </div>
         </BrowserRouter>

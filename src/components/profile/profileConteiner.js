@@ -8,11 +8,9 @@ import Post from "./Posts/Post";
 
 function ProfileContainer(props) {
 
-    let posts = props.profilePageDate.postsContent
-        .map((post) =>  <Post postText = {post.post} />)
+    let posts = props.profilePageData.postsContent
+        .map((post) => <Post postText={post.post}/>)
 
-    // let messagesDate = props.dialogsPageDate.messagesContent
-    //     .map((message) => <Message messageText={message.messageText}/>);
 
     return (
         <div className={css.content}>
@@ -21,7 +19,9 @@ function ProfileContainer(props) {
             <Avatar/>
             <Description name='Vasily' age='27' city='Tokyo' education='Harvard'/>
             <br/>
-            <CreateNewPost/>
+            <CreateNewPost addPost={props.addPost}
+                           newPostMessage={props.profilePageData.newPostMessageDisplay}
+                           updatePostChange={props.updatePostChange}/>
             <br/>
             {posts}
 

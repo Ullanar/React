@@ -1,3 +1,5 @@
+import {renderEntireTree} from "../render";
+
 let state = {
     messagesPage: {
         dialogs: [
@@ -17,13 +19,32 @@ let state = {
     },
     profilePage: {
         postsContent: [
-            {post: 'Hi', postId: '1',},
-            {post: 'This is post', postId: '2',},
-            {post: 'Another post', postId: '3',},
-            {post: 'I siting in Redux!', postId: '4',},
-            {post: 'Whahahah', postId: '5',},
-        ]
+            {post: 'Hi, i am Post!', postId: '1',},
+            {post: 'I siting in Redux.', postId: '2',},
+            {post: 'You can add new posts!', postId: '3',},
+        ],
+        newPostMessageDisplay: '',
     }
+}
+window.state = state;
+
+export let addPost = () => {
+    let newPost = {
+        post: state.profilePage.newPostMessageDisplay,
+        postId: 10,
+    };
+    if (newPost.post === '') {
+        alert('Вы не ввели текст нового поста.')
+    } else {
+        state.profilePage.postsContent.push(newPost);
+        state.profilePage.newPostMessageDisplay = '';
+        renderEntireTree(state)
+    }
+}
+
+export function updatePostChange(newTextDisplay) {
+    state.profilePage.newPostMessageDisplay = newTextDisplay;
+    renderEntireTree(state)
 }
 
 export default state;
