@@ -1,21 +1,18 @@
 import React from 'react';
 import css from './Textarea.module.css'
-import store from "../../../redux/state";
+import store, {addPostActionCreator, displayNewPostActionCreator} from "../../../redux/state";
 
 function Textarea(props) {
 
     let newPostElement = React.createRef();
 
     function newPost() {
-        props.dispatch({type : 'ADD-POST'});
+        props.dispatch(addPostActionCreator());
     }
 
-    function onPostChange(props) {
+    function onPostChange() {
         let newTextDisplay = newPostElement.current.value;
-        // Случилась досадная бага - метод dispatch ниже никак не прокидывался через props
-        // Пришлось для проверки самой работоспособности её импортировать напрямую из state
-        // Нужно пофиксить, как будет свободное время
-        store.dispatch({type : 'UPDATE-NEW-POST-TEXT', newTextDisplay: newTextDisplay});
+        store.dispatch(displayNewPostActionCreator(newTextDisplay));
     }
 
     return (

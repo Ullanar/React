@@ -2,6 +2,9 @@ import React from 'react';
 import css from './messagesContainer.module.css'
 import Message from "./Message/Message";
 import ChooseUser from "./ChooseUser/ChooseUser";
+import AddMessage from "./AddMessage/Addmessage";
+
+
 
 function MessagesContainer(props) {
 
@@ -22,7 +25,10 @@ function MessagesContainer(props) {
             <div className={css.messages}>
                 {messagesData}
                 {/*Тут мы зафигачили массив messagesDate в разметку JSX*/}
+            <AddMessage message = {props.dialogsPageData}
+                        dispatch={props.dispatch}/>
             </div>
+
         </div>
     );
 }

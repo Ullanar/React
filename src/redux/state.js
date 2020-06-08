@@ -1,4 +1,3 @@
-
 let store = {
     _state: {
         messagesPage: {
@@ -16,6 +15,7 @@ let store = {
                 {messageText: 'Mhhhh... nice team', messageId: '4',},
                 {messageText: 'BACKDOOOOR!!!', messageId: '5',}
             ],
+            newDialogMessageDisplay: '',
         },
         profilePage: {
             postsContent: [
@@ -37,29 +37,72 @@ let store = {
         this._callSubscriber = observer;
     },
     dispatch(action) {
-        if (action.type === 'ADD-POST'){
-            let newPost = {
-                post: this._state.profilePage.newPostMessageDisplay,
-                postId: 10,
-            };
-            if (newPost.post === '') {
-                alert('Вы не ввели текст нового поста.')
-            } else {
-                this._state.profilePage.postsContent.push(newPost);
-                this._state.profilePage.newPostMessageDisplay = '';
-                this._callSubscriber(this._state)
+
+        switch (action.type) {
+
+            case 'ADD-POST': { // Добавление поста на стену
+
+                let newPost = {
+                    post: this._state.profilePage.newPostMessageDisplay,
+                    postId: 10,
+                };
+                if (newPost.post === '') {
+                    alert('Вы не ввели текст нового поста.')
+                } else {
+                    this._state.profilePage.postsContent.push(newPost);
+                    this._state.profilePage.newPostMessageDisplay = '';
+                    this._callSubscriber(this._state)
+                }
+                break;
             }
+
+            case 'UPDATE-NEW-POST-TEXT' : {  // Посимвольное отображение поста в Textarea и ререндер
+                this._state.profilePage.newPostMessageDisplay = action.newTextDisplay;
+                this._callSubscriber(this._state)
+                break;
+            }
+
+            case 'ADD-MESSAGE' : { // Добавляет новое сообщение
+                let newMessage = {
+                    messageText: this._state.messagesPage.newDialogMessageDisplay,
+                    messageId: 10,
+                };
+                if (newMessage.messageText === '') {
+                    alert('Вы не ввели текст нового сообщения.')
+                } else {
+                    this._state.messagesPage.messagesContent.push(newMessage);
+                    this._state.messagesPage.newDialogMessageDisplay = '';
+                    this._callSubscriber(this._state)
+                }
+                break;
+            }
+
+            case 'UPDATE-NEW-MESSAGE-TEXT' : { // Отвечает за отображение мессаджа в Textarea messages
+                this._state.messagesPage.newDialogMessageDisplay = action.newTextDisplay;
+                this._callSubscriber(this._state)
+                break;
+            }
+
+            default:
+                console.log('АЛЛО, КАКОЙ ТИП ДЕЙСТВИЯ ТАМ ПЕРЕДАЛИ? ХЗ ЧТО ЭТО')
         }
-        else if (action.type === 'UPDATE-NEW-POST-TEXT'){
-            this._state.profilePage.newPostMessageDisplay = action.newTextDisplay;
-            this._callSubscriber(this._state)
-        }
-        else {
-            console.log('АЛЛО, КАКОЙ ТИП ДЕЙСТВИЯ ТАМ ПЕРЕДАЛИ? ХЗ ЧТО ЭТО')
-        }
-    },
+    }
+
 }
 
+export function addPostActionCreator () {
+    return {
+        type : 'ADD-POST',
+    }
+}
+
+export function displayNewPostActionCreator (newTextDisplay) {
+    return {
+        type : 'UPDATE-NEW-POST-TEXT',
+        newTextDisplay : newTextDisplay
+
+    }
+}
 
 window.state = store;
 

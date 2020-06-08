@@ -16,7 +16,8 @@ function Content(props) {
                 dispatch={props.dispatch}/>}/> {/*Отображается по дефолту*/}
             <Route path='/profile' render={() => <ProfileContainer profilePageData={props.profilePageData}
                                                                    dispatch={props.dispatch}/>}/>
-            <Route path='/messages' render={() => <MessagesContainer dialogsPageData={props.messagesPageData}/>}/>
+            <Route path='/messages' render={() => <MessagesContainer dialogsPageData={props.messagesPageData}
+                                                                     dispatch={props.dispatch}/>}/>
             <Route path='/faq' render={() => <FaqContainer/>}/>
             <Route path='/news' render={() => <NewsContainer/>}/>
         </div>
