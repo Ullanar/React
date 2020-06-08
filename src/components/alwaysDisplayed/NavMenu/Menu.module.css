@@ -5,7 +5,7 @@
     padding: 20px;
 }
 
-.contents{
+.contents {
     font-size: large;
     color: black;
 }
@@ -16,5 +16,5 @@
 }
 
 .active {
- color: dimgray;
+    color: dimgray;
 }

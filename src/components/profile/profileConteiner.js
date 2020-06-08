@@ -24,8 +24,7 @@ function ProfileContainer(props) {
                            updatePostChange={props.updatePostChange}/>
             <br/>
             {posts}
-
-
+            
         </div>
     );
 }

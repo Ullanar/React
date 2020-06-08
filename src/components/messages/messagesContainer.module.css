@@ -4,7 +4,7 @@
     grid-template-areas: "dialogs messages ";
 }
 
-.dialogs{
+.dialogs {
     grid-area: dialogs;
     margin-left: 10px;
 }
