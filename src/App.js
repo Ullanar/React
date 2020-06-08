@@ -5,7 +5,6 @@ import Content from "./components/alwaysDisplayed/mainContent/Content";
 import Menu from "./components/alwaysDisplayed/NavMenu/Menu";
 import Footer from "./components/alwaysDisplayed/Footer/Footer";
 import {BrowserRouter} from "react-router-dom";
-import {updatePostChange} from "./redux/state";
 
 function App(props) {
     return (
