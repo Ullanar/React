@@ -14,8 +14,7 @@ function App(props) {
                 <Menu/>
                 <Content messagesPageData = {props.state.messagesPage}
                          profilePageData = {props.state.profilePage}
-                         addPost = {props.addPost}
-                         updatePostChange = {props.updatePostChange}/>
+                         dispatch = {props.dispatch}/>
                 <Footer/>
             </div>
         </BrowserRouter>

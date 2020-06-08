@@ -13,11 +13,9 @@ function Content(props) {
         <div className={css.content}>
             <Route path exact='' render={() => <ProfileContainer
                 profilePageData={props.profilePageData}
-                addPost={props.addPost}
-                updatePostChange={props.updatePostChange}/>}/> {/*Отображается по дефолту*/}
+                dispatch={props.dispatch}/>}/> {/*Отображается по дефолту*/}
             <Route path='/profile' render={() => <ProfileContainer profilePageData={props.profilePageData}
-                                                                   updatePostChange={props.updatePostChange}
-                                                                   addPost={props.addPost}/>}/>
+                                                                   dispatch={props.dispatch}/>}/>
             <Route path='/messages' render={() => <MessagesContainer dialogsPageData={props.messagesPageData}/>}/>
             <Route path='/faq' render={() => <FaqContainer/>}/>
             <Route path='/news' render={() => <NewsContainer/>}/>

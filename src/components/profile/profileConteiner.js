@@ -19,12 +19,11 @@ function ProfileContainer(props) {
             <Avatar/>
             <Description name='Vasily' age='27' city='Tokyo' education='Harvard'/>
             <br/>
-            <CreateNewPost addPost={props.addPost}
-                           newPostMessage={props.profilePageData.newPostMessageDisplay}
-                           updatePostChange={props.updatePostChange}/>
+            <CreateNewPost dispatch={props.dispatch}
+                           newPostMessage={props.profilePageData.newPostMessageDisplay}/>
             <br/>
             {posts}
-            
+
         </div>
     );
 }

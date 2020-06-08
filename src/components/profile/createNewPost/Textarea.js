@@ -7,15 +7,15 @@ function Textarea(props) {
     let newPostElement = React.createRef();
 
     function newPost() {
-        props.addPost();
+        props.dispatch({type : 'ADD-POST'});
     }
 
     function onPostChange(props) {
         let newTextDisplay = newPostElement.current.value;
-        // Случилась досадная бага - функция ниже никак не прокидывалась через props
+        // Случилась досадная бага - метод dispatch ниже никак не прокидывался через props
         // Пришлось для проверки самой работоспособности её импортировать напрямую из state
         // Нужно пофиксить, как будет свободное время
-        store.updatePostChange(newTextDisplay);
+        store.dispatch({type : 'UPDATE-NEW-POST-TEXT', newTextDisplay: newTextDisplay});
     }
 
     return (
