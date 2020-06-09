@@ -104,6 +104,20 @@ export function displayNewPostActionCreator (newTextDisplay) {
     }
 }
 
+export function addMessageActionCreator () {
+    return {
+        type : 'ADD-MESSAGE'
+    }
+}
+
+export function displayNewMessageActionCreator (newTextDisplay) {
+    return{
+        type : 'UPDATE-NEW-MESSAGE-TEXT',
+        newTextDisplay : newTextDisplay,
+    }
+}
+
+
 window.state = store;
 
 export default store;
