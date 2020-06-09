@@ -19,7 +19,7 @@ function messagesReducer(state, action) {
             break;
         }
 
-        // Отвечает за отображение мессаджа в Textarea messages
+        // Отвечает за отображение текста во время набора в Textarea messages
         case 'UPDATE-NEW-MESSAGE-TEXT' : {
             state.newDialogMessageDisplay = action.newTextDisplay;
             break;

@@ -18,7 +18,7 @@ function profileReducer(state, action) {
             break;
         }
 
-        // Посимвольное отображение поста в Textarea и ререндер
+        // Посимвольное отображение текста поста во время набора в Textarea
         case 'UPDATE-NEW-POST-TEXT' : {
             state.newPostMessageDisplay = action.newTextDisplay;
             break;
