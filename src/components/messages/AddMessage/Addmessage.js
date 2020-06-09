@@ -1,18 +1,17 @@
 import React from 'react';
 import css from './Addmessage.module.css'
-import store, {addMessageActionCreator, displayNewMessageActionCreator} from "../../../redux/store";
 
 function AddMessage(props) {
 
     function newMessage() {
-        props.dispatch(addMessageActionCreator());
+        props.dispatch({type : 'ADD-MESSAGE'});
         newMessageElement.current.value = '';
 
     }
 
     function onMessageChange() {
         let newTextDisplay = newMessageElement.current.value;
-        store.dispatch(displayNewMessageActionCreator(newTextDisplay));
+        props.dispatch( {type : 'UPDATE-NEW-MESSAGE-TEXT', newTextDisplay : newTextDisplay});
     }
 
     let newMessageElement = React.createRef();

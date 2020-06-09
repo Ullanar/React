@@ -1,6 +1,13 @@
-let defaultState = '';
+let defaultState = {
+    postsContent: [
+        {post: 'Hi, i am Post!', postId: '1',},
+        {post: 'I`m sit in Redux.', postId: '2',},
+        {post: 'You can add new posts!', postId: '3',},
+    ],
+    newPostMessageDisplay: '',
+};
 
-function profileReducer(state, action) {
+function profileReducer(state = defaultState, action) {
 
     switch (action.type) {
 

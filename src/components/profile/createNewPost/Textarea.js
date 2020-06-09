@@ -1,18 +1,17 @@
 import React from 'react';
 import css from './Textarea.module.css'
-import store, {addPostActionCreator, displayNewPostActionCreator} from "../../../redux/store";
 
 function Textarea(props) {
 
     let newPostElement = React.createRef();
 
     function newPost() {
-        props.dispatch(addPostActionCreator());
+        props.dispatch({type : 'ADD-POST'});
     }
 
     function onPostChange() {
         let newTextDisplay = newPostElement.current.value;
-        store.dispatch(displayNewPostActionCreator(newTextDisplay));
+        props.dispatch({type : 'UPDATE-NEW-POST-TEXT', newTextDisplay : newTextDisplay});
     }
 
     return (
