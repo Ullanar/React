@@ -1,3 +1,5 @@
+let defaultState = '';
+
 function profileReducer(state, action) {
 
     switch (action.type) {

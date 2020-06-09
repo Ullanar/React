@@ -5,7 +5,7 @@ import MessagesContainer from "../../messages/messagesContainer";
 import NewsContainer from "../../news/News";
 import FaqContainer from "../../faq/FAQ";
 import {Route} from "react-router-dom";
-import {updatePostChange} from "../../../redux/state";
+import {updatePostChange} from "../../../redux/store";
 
 
 function Content(props) {

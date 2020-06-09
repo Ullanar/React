@@ -1,3 +1,6 @@
+
+let defaultState = ''
+
 function messagesReducer(state, action) {
 
     switch (action.type) {

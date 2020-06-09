@@ -1,6 +1,6 @@
 import React from 'react';
 import css from './Textarea.module.css'
-import store, {addPostActionCreator, displayNewPostActionCreator} from "../../../redux/state";
+import store, {addPostActionCreator, displayNewPostActionCreator} from "../../../redux/store";
 
 function Textarea(props) {
 

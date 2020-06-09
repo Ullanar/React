@@ -1,6 +1,6 @@
 import React from 'react';
 import css from './Addmessage.module.css'
-import store, {addMessageActionCreator, displayNewMessageActionCreator} from "../../../redux/state";
+import store, {addMessageActionCreator, displayNewMessageActionCreator} from "../../../redux/store";
 
 function AddMessage(props) {
 
