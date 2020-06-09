@@ -1,5 +1,5 @@
 import React from 'react';
-import css from './profileContainer.module.css';
+import css from './profileAreaDisplay.module.css';
 import Avatar from "./profileAvatar/Ava";
 import Description from "./profileDescription/Description";
 import CreateNewPost from './createNewPost/Textarea'

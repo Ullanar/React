@@ -1,12 +1,12 @@
 import React from 'react';
-import css from './messagesContainer.module.css'
+import css from './messagesAreaDisplay.module.css'
 import Message from "./Message/Message";
 import ChooseUser from "./ChooseUser/ChooseUser";
 import AddMessage from "./AddMessage/Addmessage";
 
 
 
-function MessagesContainer(props) {
+function MessagesAreaDisplay(props) {
 
     let userData = props.dialogsPageData.dialogs
         .map((dialog) => <ChooseUser userName={dialog.userName} dialogId={dialog.dialogId}/>);
@@ -33,4 +33,4 @@ function MessagesContainer(props) {
     );
 }
 
-export default MessagesContainer;
+export default MessagesAreaDisplay;
