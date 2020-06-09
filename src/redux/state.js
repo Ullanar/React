@@ -1,3 +1,6 @@
+import profileReducer from "./profileReducer";
+import messagesReducer from "./messagesReducer";
+
 let store = {
     _state: {
         messagesPage: {
@@ -38,55 +41,11 @@ let store = {
     },
     dispatch(action) {
 
-        switch (action.type) {
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.messagesPage = messagesReducer(this._state.messagesPage, action);
+    this._callSubscriber(this._state);
 
-            case 'ADD-POST': { // Добавление поста на стену
-
-                let newPost = {
-                    post: this._state.profilePage.newPostMessageDisplay,
-                    postId: 10,
-                };
-                if (newPost.post === '') {
-                    alert('Вы не ввели текст нового поста.')
-                } else {
-                    this._state.profilePage.postsContent.push(newPost);
-                    this._state.profilePage.newPostMessageDisplay = '';
-                    this._callSubscriber(this._state)
-                }
-                break;
-            }
-
-            case 'UPDATE-NEW-POST-TEXT' : {  // Посимвольное отображение поста в Textarea и ререндер
-                this._state.profilePage.newPostMessageDisplay = action.newTextDisplay;
-                this._callSubscriber(this._state)
-                break;
-            }
-
-            case 'ADD-MESSAGE' : { // Добавляет новое сообщение
-                let newMessage = {
-                    messageText: this._state.messagesPage.newDialogMessageDisplay,
-                    messageId: 10,
-                };
-                if (newMessage.messageText === '') {
-                    alert('Вы не ввели текст нового сообщения.')
-                } else {
-                    this._state.messagesPage.messagesContent.push(newMessage);
-                    this._state.messagesPage.newDialogMessageDisplay = '';
-                    this._callSubscriber(this._state)
-                }
-                break;
-            }
-
-            case 'UPDATE-NEW-MESSAGE-TEXT' : { // Отвечает за отображение мессаджа в Textarea messages
-                this._state.messagesPage.newDialogMessageDisplay = action.newTextDisplay;
-                this._callSubscriber(this._state)
-                break;
-            }
-
-            default:
-                console.log('АЛЛО, КАКОЙ ТИП ДЕЙСТВИЯ ТАМ ПЕРЕДАЛИ? ХЗ ЧТО ЭТО')
-        }
-    }
+    },
 
 }
 
