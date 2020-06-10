@@ -1,22 +1,14 @@
 import React from 'react';
 import './App.css';
-import Header from "./components/alwaysDisplayed/Header/Header";
-import Content from "./components/alwaysDisplayed/mainContent/Content";
-import Menu from "./components/alwaysDisplayed/NavMenu/Menu";
-import Footer from "./components/alwaysDisplayed/Footer/Footer";
 import {BrowserRouter} from "react-router-dom";
+import MiniDrawer from "./components/mainArea/mainArea";
 
 function App(props) {
     return (
         <BrowserRouter>
-            <div className="app-wrapper">
-                <Header/>
-                <Menu/>
-                <Content state = {props.state}
-                         store = {props.store}
-                         dispatch = {props.dispatch}/>
-                <Footer/>
-            </div>
+            <MiniDrawer state = {props.state}
+                        store = {props.store}
+                        dispatch = {props.dispatch}/>
         </BrowserRouter>
     );
 }
