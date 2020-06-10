@@ -38,7 +38,7 @@ function messagesReducer(state = defaultState, action) {
             break;
         }
 
-        // Отвечает за отображение текста во время набора в Textarea messages
+        // Отвечает за отображение текста во время набора в AddNewPost messages
         case 'UPDATE-NEW-MESSAGE-TEXT' : {
             state.newDialogMessageDisplay = action.newTextDisplay;
             break;

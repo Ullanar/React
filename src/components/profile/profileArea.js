@@ -2,8 +2,9 @@ import React from 'react';
 import css from './profileArea.module.css';
 import Avatar from "./profileAvatar/Ava";
 import Description from "./profileDescription/Description";
-import CreateNewPost from './createNewPost/Textarea'
+import CreateNewPost from './createNewPost/addNewPost'
 import Post from "./Posts/Post";
+import AddNewPostContainer from "./createNewPost/addNewPostContainer";
 
 
 function ProfileArea(props) {
@@ -15,8 +16,7 @@ function ProfileArea(props) {
             <Avatar/>
             <Description userDescription = {props.userDescription}/>
             <br/>
-            {/*<CreateNewPost dispatch={props.dispatch}*/}
-            {/*               newPostMessage={props.profilePageData.newPostMessageDisplay}/>*/}
+            <AddNewPostContainer dispatch={props.dispatch} state = {props.state}/>
             <br/>
             {props.posts}
 
