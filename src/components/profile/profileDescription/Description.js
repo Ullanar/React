@@ -5,10 +5,10 @@ function UserDescription(props) {
         <div>
             <div className='Description'>
                 <ul>
-                    <li>Name: {props.name}</li>
-                    <li>Age: {props.age}</li>
-                    <li>City: {props.city}</li>
-                    <li>Education: {props.education}</li>
+                    <li>Name: {props.userDescription.name}</li>
+                    <li>Age: {props.userDescription.age}</li>
+                    <li>City: {props.userDescription.city}</li>
+                    <li>Education: {props.userDescription.education}</li>
                 </ul>
             </div>
         </div>

@@ -4,6 +4,12 @@ let defaultState = {
         {post: 'I`m sit in Redux.', postId: '2',},
         {post: 'You can add new posts!', postId: '3',},
     ],
+    userDescription: {
+        name: 'Vasily',
+        age: '27',
+        city: 'Tokyo',
+        education: 'Harvard',
+    },
     newPostMessageDisplay: '',
 };
 

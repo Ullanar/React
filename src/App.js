@@ -12,8 +12,8 @@ function App(props) {
             <div className="app-wrapper">
                 <Header/>
                 <Menu/>
-                <Content messagesPageData = {props.state.messagesPage}
-                         profilePageData = {props.state.profilePage}
+                <Content state = {props.state}
+                         store = {props.store}
                          dispatch = {props.dispatch}/>
                 <Footer/>
             </div>
