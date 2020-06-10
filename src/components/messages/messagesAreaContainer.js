@@ -13,7 +13,8 @@ function MessagesAreaContainer(props) {
         .map((message) => <Message messageText={message.messageText}/>);
 
     return (
-        <MessagesArea dialogs = {userData} messages = {messagesData}/>
+        <MessagesArea dialogs = {userData} messages = {messagesData}
+                      state = {props.state} dispatch = {props.dispatch}/>
     );
 }
 
