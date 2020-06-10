@@ -1,3 +1,9 @@
+
+// Этот файл более не используется в проекте.
+// Оставили его только, чтобы посмотреть в случае чего в старый State
+// Теперь юзаем нормальный Redux
+
+
 import profileReducer from "./profileReducer";
 import messagesReducer from "./messagesReducer";
 
