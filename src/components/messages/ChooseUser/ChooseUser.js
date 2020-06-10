@@ -1,7 +1,7 @@
 import React from 'react';
 import css from './ChooseUser.modeule.css'
 import {NavLink} from "react-router-dom";
-import MessagesAreaDisplay from '../messagesAreaDisplay';
+import MessagesArea from '../messagesArea';
 
 function ChooseUser(props) {
     let path = '/messages/' + props.dialogId;
