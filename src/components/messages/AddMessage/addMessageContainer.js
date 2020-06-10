@@ -11,7 +11,6 @@ function AddMessageContainer(props) {
         props.dispatch( {type : 'UPDATE-NEW-MESSAGE-TEXT', newTextDisplay : newTextDisplay});
     }
 
-    let newMessageElement = React.createRef();
     return (
         <AddMessage sendNewMessage = {newMessage} displayNewMessageValue = {onMessageChange} actualMessageValue = {props.state.messagesPage.newDialogMessageDisplay}/>
     );
