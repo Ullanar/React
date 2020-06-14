@@ -13,9 +13,7 @@ import MessagesAreaContainer from "../../messages/messagesAreaContainer";
 function Content(props) {
     return (
         <div className={css.content}>
-            <Route path='/profile' render={() => <ProfileAreaContainer store={props.store}
-                                                                       state={props.state}
-                                                                       dispatch={props.dispatch}/>}/>
+            <Route path='/profile' render={() => <ProfileAreaContainer/>}/>
             <Route path='/messages' render={() => <MessagesAreaContainer state={props.state}
                                                                          dispatch={props.dispatch}/>}/>
             <Route path='/faq' render={() => <FaqContainer/>}/>

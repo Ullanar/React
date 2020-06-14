@@ -12,7 +12,9 @@ export function renderEntireTree() {
         <React.StrictMode>
             <BrowserRouter>
                     <Provider store={store}>
+
                 <App state={store.getState()} dispatch={store.dispatch.bind(store)} store={store}/>
+
                     </Provider>
             </BrowserRouter>
         </React.StrictMode>,
