@@ -22,25 +22,28 @@ function profileReducer(state = defaultState, action) {
 
             let newPost = {
                 post: state.newPostMessageDisplay,
-                postId: 10,
+                postId: '10',
             };
-            if (newPost.post === '') {
-                alert('Вы не ввели текст нового поста.')
-            } else {
-                state.postsContent.push(newPost);
-                state.newPostMessageDisplay = '';
-            }
-            break;
+
+            console.log(newPost)
+
+            state.postsContent = [...state.postsContent];
+            state.postsContent.push(newPost);
+            state.newPostMessageDisplay = '';
+            let stateCopy = {...state};
+            return stateCopy;
         }
 
         // Посимвольное отображение текста поста во время набора в AddNewPost
         case 'UPDATE-NEW-POST-TEXT' : {
-            state.newPostMessageDisplay = action.newTextDisplay;
-            break;
+            let stateCopy = {...state};
+
+            stateCopy.newPostMessageDisplay = action.newTextDisplay;
+            return stateCopy;
         }
 
         default:
-            console.log('АЛЛО, КАКОЙ ТИП ДЕЙСТВИЯ ТАМ ПЕРЕДАЛИ? ХЗ ЧТО ЭТО')
+            return state;
     }
 
     return state;

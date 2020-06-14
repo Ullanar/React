@@ -16,7 +16,7 @@ function ProfileArea(props) {
             <Avatar/>
             <Description userDescription = {props.userDescription}/>
             <br/>
-            <AddNewPostContainer dispatch={props.dispatch} state = {props.state}/>
+            <AddNewPostContainer/>
             <br/>
             {props.posts}
 

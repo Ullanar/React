@@ -5,14 +5,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import {BrowserRouter} from "react-router-dom";
+import {Provider} from "react-redux";
 
 export function renderEntireTree() {
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>
-
+                    <Provider store={store}>
                 <App state={store.getState()} dispatch={store.dispatch.bind(store)} store={store}/>
-
+                    </Provider>
             </BrowserRouter>
         </React.StrictMode>,
         document.getElementById('root')
@@ -23,6 +24,5 @@ renderEntireTree(store);
 
 store.subscribe(() => {
     renderEntireTree();
-    let state = store.getState();
 })
 serviceWorker.unregister();

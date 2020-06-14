@@ -1,18 +1,19 @@
 import React from 'react';
 import Post from "./Posts/Post";
 import ProfileArea from "./profileArea";
+import {connect} from "react-redux";
 
 
-function ProfileAreaContainer(props) {
-debugger;
-    let posts = props.state.profilePage.postsContent
-        .map((post) => <Post postText={post.post}/>)
+function mapStateToProps (state) {
 
-
-    return (
-        <ProfileArea posts = {posts} userDescription = {props.state.profilePage.userDescription}
-                     state = {props.state} dispatch = {props.dispatch}/>
-    );
+    return {
+        posts : state.profilePage.postsContent
+            .map((post) => <Post postText={post.post}/>),
+        userDescription: state.profilePage.userDescription
+    }
 }
+
+
+let ProfileAreaContainer = connect(mapStateToProps)(ProfileArea);
 
 export default ProfileAreaContainer;

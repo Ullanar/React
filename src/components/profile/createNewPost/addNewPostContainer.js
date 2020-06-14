@@ -1,21 +1,25 @@
 import React from 'react';
 import AddNewPost from "./addNewPost";
+import {connect} from "react-redux";
 
-function AddNewPostContainer(props) {
-
-    function newPost() {
-        props.dispatch({type : 'ADD-POST'});
-    }
-
-    function onPostChange(newTextDisplay) {
-        props.dispatch({type : 'UPDATE-NEW-POST-TEXT', newTextDisplay : newTextDisplay});
-    }
-
-    return (
-        <AddNewPost updateNewPostView = {onPostChange}
-                    createNewPost = {newPost}
-                    textInTextarea = {props.state.profilePage.newPostMessageDisplay}/>
-    );
+function mapStateToProps(state) {
+    debugger;
+    return{
+     textInTextarea: state.profilePage.newPostMessageDisplay
+ }
 }
+
+function mapDispatchToProps(dispatch) {
+    return {
+        createNewPost: () =>{
+            dispatch({type : 'ADD-POST'})
+        },
+        updateNewPostView: (newTextDisplay) =>{
+            dispatch({type : 'UPDATE-NEW-POST-TEXT', newTextDisplay : newTextDisplay})
+        }
+    }
+}
+
+let AddNewPostContainer = connect(mapStateToProps, mapDispatchToProps)(AddNewPost);
 
 export default AddNewPostContainer;
