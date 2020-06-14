@@ -9,7 +9,9 @@ function mapStateToProps (state) {
     return {
         posts : state.profilePage.postsContent
             .map((post) => <Post postText={post.post}/>),
+        // Массив всех постов на странице юзера
         userDescription: state.profilePage.userDescription
+        // Описание пользователя, выдающееся рядом с аватаром
     }
 }
 

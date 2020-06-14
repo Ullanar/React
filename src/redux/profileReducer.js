@@ -24,14 +24,16 @@ function profileReducer(state = defaultState, action) {
                 post: state.newPostMessageDisplay,
                 postId: '10',
             };
-
-            console.log(newPost)
-
+            if (state.newPostMessageDisplay === ''){
+                alert('Вы не ввели текст поста')
+            }
+            else {
             state.postsContent = [...state.postsContent];
             state.postsContent.push(newPost);
             state.newPostMessageDisplay = '';
             let stateCopy = {...state};
             return stateCopy;
+            }
         }
 
         // Посимвольное отображение текста поста во время набора в AddNewPost

@@ -9,7 +9,7 @@ function MessagesArea(props) {
             <div className={css.dialogs}>
                 <ul>
                     {/*Вывод списка диалогов*/}
-                    {props.dialogs}
+                    {props.userData}
 
                 </ul>
             </div>
@@ -17,10 +17,10 @@ function MessagesArea(props) {
             <div className={css.messages}>
 
                 {/*Вывод собщений в диалоге*/}
-                {props.messages}
+                {props.messagesData}
 
             <AddMessageContainer state = {props.state}
-                        dispatch={props.dispatch}/>
+                        dispatch={props.messagesData}/>
             </div>
 
         </div>
