@@ -1,19 +1,27 @@
 import React from 'react';
 import AddMessage from "./addMessage";
+import {connect} from "react-redux";
 
-function AddMessageContainer(props) {
 
-    function newMessage() {
-        props.dispatch({type : 'ADD-MESSAGE'});
+
+function mapStateToProps(state){
+    return{
+        actualMessageValue: state.messagesPage.newDialogMessageDisplay
     }
-
-    function onMessageChange(newTextDisplay) {
-        props.dispatch( {type : 'UPDATE-NEW-MESSAGE-TEXT', newTextDisplay : newTextDisplay});
-    }
-
-    return (
-        <AddMessage sendNewMessage = {newMessage} displayNewMessageValue = {onMessageChange} actualMessageValue = {props.state.messagesPage.newDialogMessageDisplay}/>
-    );
 }
+function mapDispatchToProps(dispatch){
+    return{
+        sendNewMessage: () =>{
+            dispatch({type : 'ADD-MESSAGE'})
+
+        },
+        displayNewMessageValue: (newTextDisplay) => {
+            dispatch( {type : 'UPDATE-NEW-MESSAGE-TEXT', newTextDisplay : newTextDisplay})
+        }
+    }
+}
+
+
+let AddMessageContainer = connect(mapStateToProps, mapDispatchToProps)(AddMessage);
 
 export default AddMessageContainer;

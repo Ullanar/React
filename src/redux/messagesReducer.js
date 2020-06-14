@@ -21,31 +21,42 @@ function messagesReducer(state = defaultState, action) {
 
     switch (action.type) {
 
-        // Добавляет новое сообщение
+        // Отправляет новое сообщение
         case 'ADD-MESSAGE' : {
 
             let newMessage = {
                 messageText: state.newDialogMessageDisplay,
-                messageId: 10,
+                messageId: '10',
             };
             if (newMessage.messageText === '') {
                 alert('Вы не ввели текст нового сообщения.')
             }
             else {
-                state.messagesContent.push(newMessage);
-                state.newDialogMessageDisplay = '';
+                let stateCopy = {
+                    ...state,
+                    dialogs: [... state.dialogs],
+                    messagesContent: [...state.messagesContent, newMessage],
+                    newDialogMessageDisplay: '',
+                };
+
+            return stateCopy;
             }
+
             break;
         }
 
         // Отвечает за отображение текста во время набора в AddNewPost messages
         case 'UPDATE-NEW-MESSAGE-TEXT' : {
-            state.newDialogMessageDisplay = action.newTextDisplay;
-            break;
+            let stateCopy = {
+                ...state,
+                newDialogMessageDisplay: action.newTextDisplay,
+            };
+
+            return stateCopy;
         }
 
         default:
-            console.log('АЛЛО, КАКОЙ ТИП ДЕЙСТВИЯ ТАМ ПЕРЕДАЛИ? ХЗ ЧТО ЭТО')
+            return state;
     }
 
     return state;

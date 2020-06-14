@@ -28,19 +28,23 @@ function profileReducer(state = defaultState, action) {
                 alert('Вы не ввели текст поста')
             }
             else {
-            state.postsContent = [...state.postsContent];
-            state.postsContent.push(newPost);
-            state.newPostMessageDisplay = '';
-            let stateCopy = {...state};
+            let stateCopy = {
+                ...state,
+                postsContent: [...state.postsContent, newPost],
+                newPostMessageDisplay: ''
+            };
+
             return stateCopy;
             }
         }
 
         // Посимвольное отображение текста поста во время набора в AddNewPost
         case 'UPDATE-NEW-POST-TEXT' : {
-            let stateCopy = {...state};
+            let stateCopy = {
+                ...state,
+                newPostMessageDisplay: action.newTextDisplay
+            };
 
-            stateCopy.newPostMessageDisplay = action.newTextDisplay;
             return stateCopy;
         }
 

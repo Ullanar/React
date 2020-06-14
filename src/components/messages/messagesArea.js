@@ -19,8 +19,7 @@ function MessagesArea(props) {
                 {/*Вывод собщений в диалоге*/}
                 {props.messagesData}
 
-            <AddMessageContainer state = {props.state}
-                        dispatch={props.messagesData}/>
+            <AddMessageContainer />
             </div>
 
         </div>
