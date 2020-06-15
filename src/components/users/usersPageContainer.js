@@ -17,7 +17,15 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-
+        follow: (userId) => {
+            dispatch({type: 'FOLLOW', userId: userId})
+        },
+        unfollow: (userId) => {
+            dispatch({type: 'UNFOLLOW', userId: userId})
+        },
+        setUsers: (users) => {
+            dispatch({type: 'SET_USERS', users: users})
+        }
     };
 }
 
