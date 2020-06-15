@@ -1,0 +1,9 @@
+.profilePhoto{
+    width: 100px;
+    height: 100px;
+}
+
+.wrapper{
+    border: brown;
+    padding: 10px;
+}

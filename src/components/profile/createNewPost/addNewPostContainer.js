@@ -3,7 +3,6 @@ import AddNewPost from "./addNewPost";
 import {connect} from "react-redux";
 
 function mapStateToProps(state) {
-    debugger;
     return{
      textInTextarea: state.profilePage.newPostMessageDisplay
  }

@@ -8,6 +8,7 @@ import {Route} from "react-router-dom";
 import {updatePostChange} from "../../../redux/store";
 import ProfileAreaContainer from "../../profile/profileAreaContainer";
 import MessagesAreaContainer from "../../messages/messagesAreaContainer";
+import UsersPageContainer from "../../users/usersPageContainer";
 
 
 function Content(props) {
@@ -19,6 +20,7 @@ function Content(props) {
             <Route path='/faq' render={() => <FaqContainer/>}/>
 
             <Route path='/news' render={() => <NewsContainer/>}/>
+            <Route path='/users' render={() => <UsersPageContainer/>}/>
         </div>
     );
 }
