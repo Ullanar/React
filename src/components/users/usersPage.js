@@ -39,6 +39,7 @@ function UsersPage(props) {
             },
         ])
     }
+
     return (
         props.users.map(user => <div key={user.id} className={css.wrapper}>
       <span>

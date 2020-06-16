@@ -3,18 +3,18 @@ import AddNewPost from "./addNewPost";
 import {connect} from "react-redux";
 
 function mapStateToProps(state) {
-    return{
-     textInTextarea: state.profilePage.newPostMessageDisplay
- }
+    return {
+        textInTextarea: state.profilePage.newPostMessageDisplay
+    }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        createNewPost: () =>{
-            dispatch({type : 'ADD-POST'})
+        createNewPost: () => {
+            dispatch({type: 'ADD-POST'})
         },
-        updateNewPostView: (newTextDisplay) =>{
-            dispatch({type : 'UPDATE-NEW-POST-TEXT', newTextDisplay : newTextDisplay})
+        updateNewPostView: (newTextDisplay) => {
+            dispatch({type: 'UPDATE-NEW-POST-TEXT', newTextDisplay: newTextDisplay})
         }
     }
 }

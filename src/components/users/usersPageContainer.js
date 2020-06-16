@@ -4,7 +4,7 @@ import UsersPage from "./usersPage";
 
 
 function mapStateToProps(state) {
-    return{
+    return {
 
         users: state.usersPage.users
     };
@@ -24,6 +24,6 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-const UsersPageContainer = connect (mapStateToProps, mapDispatchToProps)(UsersPage);
+const UsersPageContainer = connect(mapStateToProps, mapDispatchToProps)(UsersPage);
 
 export default UsersPageContainer;
