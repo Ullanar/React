@@ -1,36 +1,5 @@
 let defaultState = {
-    users: [
-        {
-            id: '1',
-            userName: 'Miku',
-            status: 'Whahahah',
-            photoUrl: 'https://sun9-71.userapi.com/c857636/v857636740/1f1850/36kyC-EZ40Y.jpg',
-            country: 'Rishi',
-            city: 'GRA Base',
-            followed: false,
-
-        },
-        {
-            id: '2',
-            userName: 'Miku',
-            status: 'Whahahah',
-            photoUrl: 'https://sun9-71.userapi.com/c857636/v857636740/1f1850/36kyC-EZ40Y.jpg',
-            country: 'Rishi',
-            city: 'GRA Base',
-            followed: false,
-
-        },
-        {
-            id: '3',
-            userName: 'Miku',
-            status: 'Whahahah',
-            photoUrl: 'https://sun9-71.userapi.com/c857636/v857636740/1f1850/36kyC-EZ40Y.jpg',
-            country: 'Rishi',
-            city: 'GRA Base',
-            followed: false,
-
-        },
-    ],
+    users: [],
 };
 
 function usersReducer(state = defaultState, action) {
@@ -41,7 +10,7 @@ function usersReducer(state = defaultState, action) {
         case 'FOLLOW' : {
             return {
                 ...state,
-                    users: state.users.map(user => {
+                    users: state.users.map((user) => {
                         if (user.id === action.userId){
                             return {...user, followed: true};
                         }
@@ -55,7 +24,7 @@ function usersReducer(state = defaultState, action) {
         case 'UNFOLLOW' : {
             return {
                 ...state,
-                users: state.users.map(user => {
+                users: state.users.map((user) => {
                     if (user.id === action.userId){
                         return {...user, followed: false};
                     }

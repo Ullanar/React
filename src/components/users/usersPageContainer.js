@@ -6,12 +6,14 @@ import UsersTitle from "./usersTitle/usersTitle";
 
 function mapStateToProps(state) {
     return{
-    users: state.usersPage.users
-        .map((user) => <UsersTitle userName = {user.userName}
-                                   photoUrl = {user.photoUrl}
-                                   status = {user.status}
-                                   country = {user.country}
-                                   city = {user.city}/>)
+    // users: state.usersPage.users
+    //     .map((user) => <UsersTitle userName = {user.userName}
+    //                                photoUrl = {user.photoUrl}
+    //                                status = {'Status: '+ user.status}
+    //                                country = {'Country: '+ user.country}
+    //                                city = {'City: ' + user.city}/>)
+
+        users: state.usersPage.users
     };
 }
 
