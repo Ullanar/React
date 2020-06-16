@@ -1,17 +1,10 @@
 import React from "react";
 import {connect} from "react-redux";
 import UsersPage from "./usersPage";
-import UsersTitle from "./usersTitle/usersTitle";
 
 
 function mapStateToProps(state) {
     return{
-    // users: state.usersPage.users
-    //     .map((user) => <UsersTitle userName = {user.userName}
-    //                                photoUrl = {user.photoUrl}
-    //                                status = {'Status: '+ user.status}
-    //                                country = {'Country: '+ user.country}
-    //                                city = {'City: ' + user.city}/>)
 
         users: state.usersPage.users
     };
