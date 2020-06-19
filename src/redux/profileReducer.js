@@ -24,17 +24,17 @@ function profileReducer(state = defaultState, action) {
                 post: state.newPostMessageDisplay,
                 postId: '10',
             };
-            if (state.newPostMessageDisplay === ''){
+            if (state.newPostMessageDisplay === '') {
                 alert('Вы не ввели текст поста')
-            }
-            else {
-            let stateCopy = {
-                ...state,
-                postsContent: [...state.postsContent, newPost],
-                newPostMessageDisplay: ''
-            };
+            } else {
+                let stateCopy = {
+                    ...state,
+                    postsContent: [...state.postsContent, newPost],
+                    newPostMessageDisplay: ''
+                };
 
-            return stateCopy;
+                return stateCopy;
+
             }
         }
 

@@ -86,4 +86,3 @@ export function displayNewMessageActionCreator (newTextDisplay) {
 window.state = store;
 
 export default store;
-

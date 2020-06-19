@@ -4,6 +4,7 @@ import css from './usersPage.module.css'
 
 function UsersPage(props) {
 
+
     if (props.users.length === 0) {
 
         props.setUsers([
@@ -19,11 +20,11 @@ function UsersPage(props) {
             },
             {
                 id: '2',
-                userName: 'Miku',
-                status: 'Whahahah',
-                photoUrl: 'https://sun9-71.userapi.com/c857636/v857636740/1f1850/36kyC-EZ40Y.jpg',
-                country: 'Rishi',
-                city: 'GRA Base',
+                userName: 'Потец',
+                status: 'Роса смерти',
+                photoUrl: 'https://katab.asia/wp-content/uploads/2015/10/8.jpg',
+                country: 'Южное Бутово',
+                city: 'Ад',
                 followed: false,
 
             },
