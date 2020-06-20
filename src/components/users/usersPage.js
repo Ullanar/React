@@ -3,21 +3,18 @@ import css from './usersPage.module.css'
 import * as axios from "axios";
 import noUserPhoto from '../../Assets/noUserPhoto.png'
 
-class userPage extends React.Component{
+class userPage extends React.Component {
 
-    constructor(props) {
-        super(props);
-
+    componentDidMount() {
         axios.get('https://social-network.samuraijs.com/api/1.0/users')
             .then(response => {
                 this.props.setUsers(response.data.items)
-
             });
     }
 
     render() {
-        return(
-        this.props.users.map(user => <div key={user.id} className={css.wrapper}>
+        return (
+            this.props.users.map(user => <div key={user.id} className={css.wrapper}>
       <span>
           <div>{user.name}</div>
           <div>
@@ -29,7 +26,7 @@ class userPage extends React.Component{
 
           </div>
       </span>
-            <span>
+                    <span>
           <span>
 
               <div>{'Status: ' + user.status}</div>
@@ -37,8 +34,8 @@ class userPage extends React.Component{
 
       </span>
 
-        </div>
-        ));
+                </div>
+            ));
     }
 }
 
