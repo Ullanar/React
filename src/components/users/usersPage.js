@@ -1,52 +1,25 @@
 import React from "react";
 import css from './usersPage.module.css'
-
+import * as axios from "axios";
+import noUserPhoto from '../../Assets/noUserPhoto.png'
 
 function UsersPage(props) {
 
 
     if (props.users.length === 0) {
+        axios.get('https://social-network.samuraijs.com/api/1.0/users')
+            .then(response => {
+                props.setUsers(response.data.items)
 
-        props.setUsers([
-            {
-                id: '1',
-                userName: 'Miku',
-                status: 'Whahahah',
-                photoUrl: 'https://sun9-71.userapi.com/c857636/v857636740/1f1850/36kyC-EZ40Y.jpg',
-                country: 'Rishi',
-                city: 'GRA Base',
-                followed: false,
-
-            },
-            {
-                id: '2',
-                userName: 'Потец',
-                status: 'Роса смерти',
-                photoUrl: 'https://katab.asia/wp-content/uploads/2015/10/8.jpg',
-                country: 'Южное Бутово',
-                city: 'Ад',
-                followed: false,
-
-            },
-            {
-                id: '3',
-                userName: 'Miku',
-                status: 'Whahahah',
-                photoUrl: 'https://sun9-71.userapi.com/c857636/v857636740/1f1850/36kyC-EZ40Y.jpg',
-                country: 'Rishi',
-                city: 'GRA Base',
-                followed: false,
-
-            },
-        ])
+            });
     }
 
     return (
         props.users.map(user => <div key={user.id} className={css.wrapper}>
       <span>
-          <div>{user.userName}</div>
+          <div>{user.name}</div>
           <div>
-          <img className={css.img} src={user.photoUrl}/>
+          <img className={css.img} src={user.photos.small !== null ? user.photos.small : noUserPhoto}/>
           </div>
           <div>
               {user.followed ? <button onClick={() => props.unfollow(user.id)}>Unsubscribe</button>
@@ -60,8 +33,9 @@ function UsersPage(props) {
               <div>{'Status: ' + user.status}</div>
           </span>
           <span>
-              <div>{'Country: ' + user.country}</div>
-              <div>{'City: ' + user.city}</div>
+              {/*API не дает данных*/}
+              {/*<div>{'Country: ' + user.country}</div>*/}
+              {/*<div>{'City: ' + user.city}</div>*/}
           </span>
 
       </span>

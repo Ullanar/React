@@ -46,7 +46,6 @@ function messagesReducer(state = defaultState, action) {
 
         // Отвечает за отображение текста во время набора в AddNewPost messages
         case 'UPDATE-NEW-MESSAGE-TEXT' : {
-            debugger;
             let stateCopy = {
                 ...state,
                 newDialogMessageDisplay: action.newTextDisplay,
