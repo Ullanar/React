@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import UsersPage from "./usersPage";
+import userPage from "./usersPage";
 
 
 function mapStateToProps(state) {
@@ -24,6 +24,6 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-const UsersPageContainer = connect(mapStateToProps, mapDispatchToProps)(UsersPage);
+const UsersPageContainer = connect(mapStateToProps, mapDispatchToProps)(userPage);
 
 export default UsersPageContainer;
