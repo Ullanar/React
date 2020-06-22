@@ -6,3 +6,9 @@
 .wrapper {
     padding: 10px;
 }
+
+.activePage {
+    color: orangered;
+    font-weight: bold;
+    font-size: large;
+}

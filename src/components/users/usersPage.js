@@ -6,15 +6,39 @@ import noUserPhoto from '../../Assets/noUserPhoto.png'
 class userPage extends React.Component {
 
     componentDidMount() {
-        axios.get('https://social-network.samuraijs.com/api/1.0/users')
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
             .then(response => {
                 this.props.setUsers(response.data.items)
             });
     }
 
-    render() {
-        return (
-            this.props.users.map(user => <div key={user.id} className={css.wrapper}>
+    onPageChanged(p){
+        this.props.changeCurrentPage(p);
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=${this.props.pageSize}`)
+            .then(response => {
+                this.props.setUsers(response.data.items)
+            });
+    }
+
+    render(props) {
+        let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+        let pages = [];
+
+        for (let i = 1; i <= pagesCount; i++) {
+
+            pages.push(i);
+
+        }
+
+        return <div>
+
+            <div>
+                {pages.map((p) => <button className={this.props.currentPage === p && css.activePage}
+                onClick={() => this.onPageChanged(p)}>{p}</button>)}
+            </div>
+
+            {
+                this.props.users.map(user => <div key={user.id} className={css.wrapper}>
       <span>
           <div>{user.name}</div>
           <div>
@@ -26,7 +50,7 @@ class userPage extends React.Component {
 
           </div>
       </span>
-                    <span>
+                        <span>
           <span>
 
               <div>{'Status: ' + user.status}</div>
@@ -34,8 +58,15 @@ class userPage extends React.Component {
 
       </span>
 
-                </div>
-            ));
+                    </div>
+
+                )}
+            <div>
+                {pages.map((p) => <button className={this.props.currentPage === p && css.activePage}
+                                          onClick={() => this.props.changeCurrentPage(p)}>{p}</button>)}
+            </div>
+        </div>
+
     }
 }
 
