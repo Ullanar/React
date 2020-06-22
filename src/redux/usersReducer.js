@@ -63,16 +63,26 @@ function usersReducer(state = defaultState, action) {
     return state;
 }
 
-export function followAC() {
+export function followAC(userId) {
+    return{
+        type: FOLLOW,
+        userId: userId,
+    }
+}
+
+export function unfollowAC(userId) {
+    return{
+        type: UNFOLLOW,
+        userId: userId,
+    }
 
 }
 
-export function unfollowAC() {
-
-}
-
-export function setUsersAC() {
-
+export function setUsersAC(users) {
+    return{
+        type: SET_USERS,
+        users: users,
+    }
 }
 
 export function changePageAC(currentPage) {
