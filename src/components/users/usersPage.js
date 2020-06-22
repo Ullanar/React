@@ -13,7 +13,7 @@ class userPage extends React.Component {
             });
     }
 
-    onPageChanged(p){
+    onPageChanged(p) {
         this.props.changeCurrentPage(p);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=${this.props.pageSize}`)
             .then(response => {
@@ -36,7 +36,7 @@ class userPage extends React.Component {
 
             <div>
                 {pages.map((p) => <button className={this.props.currentPage === p && css.activePage}
-                onClick={() => this.onPageChanged(p)}>{p}</button>)}
+                                          onClick={() => this.onPageChanged(p)}>{p}</button>)}
             </div>
 
             {
@@ -61,7 +61,6 @@ class userPage extends React.Component {
       </span>
 
                     </div>
-
                 )}
             <div>
                 {pages.map((p) => <button className={this.props.currentPage === p && css.activePage}

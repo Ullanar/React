@@ -19,13 +19,13 @@ function usersReducer(state = defaultState, action) {
         case FOLLOW : {
             return {
                 ...state,
-                    users: state.users.map((user) => {
-                        if (user.id === action.userId){
-                            return {...user, followed: true};
-                        }
-                        return user;
-                    })
-                };
+                users: state.users.map((user) => {
+                    if (user.id === action.userId) {
+                        return {...user, followed: true};
+                    }
+                    return user;
+                })
+            };
             break;
         }
 
@@ -34,7 +34,7 @@ function usersReducer(state = defaultState, action) {
             return {
                 ...state,
                 users: state.users.map((user) => {
-                    if (user.id === action.userId){
+                    if (user.id === action.userId) {
                         return {...user, followed: false};
                     }
                     return user;
@@ -45,13 +45,14 @@ function usersReducer(state = defaultState, action) {
 
         // Загружает в State список пользователей
         case SET_USERS: {
-            return {...state, users:action.users}
+            return {...state, users: action.users}
         }
 
         // Меняет активную стараницу вывода пользователей
         case CHANGE_PAGE:
             return {...state, currentPage: action.currentPage}
 
+        // Сетает с сервера количество пользователей
         case SET_TOTAL_USERS_COUNT:
             return {...state, totalUsersCount: action.totalUsersCount}
 
@@ -65,24 +66,27 @@ function usersReducer(state = defaultState, action) {
 export function followAC() {
 
 }
+
 export function unfollowAC() {
 
 }
+
 export function setUsersAC() {
 
 }
+
 export function changePageAC(currentPage) {
-return {
-    type: CHANGE_PAGE,
-    currentPage: currentPage,
-}
+    return {
+        type: CHANGE_PAGE,
+        currentPage: currentPage,
+    }
 }
 
 export function setUsersCountAC(totalUsersCount) {
-return{
-    type: SET_TOTAL_USERS_COUNT,
-    totalUsersCount: totalUsersCount,
-}
+    return {
+        type: SET_TOTAL_USERS_COUNT,
+        totalUsersCount: totalUsersCount,
+    }
 }
 
 export default usersReducer;
