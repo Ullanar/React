@@ -9,6 +9,7 @@ class userPage extends React.Component {
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
             .then(response => {
                 this.props.setUsers(response.data.items)
+                this.props.setUsersCount(response.data.totalCount);
             });
     }
 
@@ -17,10 +18,11 @@ class userPage extends React.Component {
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=${this.props.pageSize}`)
             .then(response => {
                 this.props.setUsers(response.data.items)
+                this.props.setUsersCount(response.data.totalCount);
             });
     }
 
-    render(props) {
+    render() {
         let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
         let pages = [];
 
