@@ -1,7 +1,14 @@
 import React from "react";
 import {connect} from "react-redux";
 import userPage from "./usersPage";
-import {changePageAC, followAC, setUsersAC, setUsersCountAC, unfollowAC} from "../../redux/usersReducer";
+import {
+    changePageAC,
+    followAC,
+    setUsersAC,
+    setUsersCountAC,
+    toggleLoadingAC,
+    unfollowAC
+} from "../../redux/usersReducer";
 
 
 function mapStateToProps(state) {
@@ -11,6 +18,7 @@ function mapStateToProps(state) {
         pageSize: state.usersPage.pageSize,
         totalUsersCount: state.usersPage.totalUsersCount,
         currentPage: state.usersPage.currentPage,
+        isLoading: state.usersPage.isLoading,
 
     };
 }
@@ -31,6 +39,9 @@ function mapDispatchToProps(dispatch) {
         },
         setUsersCount: (totalUsersCount) => {
             dispatch(setUsersCountAC(totalUsersCount))
+        },
+        toggleLoading: (necessaryLoadingValue) => {
+            dispatch(toggleLoadingAC(necessaryLoadingValue))
         }
     };
 }

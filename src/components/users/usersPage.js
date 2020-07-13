@@ -2,12 +2,15 @@ import React from "react";
 import css from './usersPage.module.css'
 import * as axios from "axios";
 import noUserPhoto from '../../Assets/noUserPhoto.png'
+import loading from '../../Assets/loading.gif'
 
 class userPage extends React.Component {
 
     componentDidMount() {
+        this.props.toggleLoading(true);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
             .then(response => {
+                this.props.toggleLoading(false);
                 this.props.setUsers(response.data.items)
                 this.props.setUsersCount(response.data.totalCount);
             });
@@ -15,8 +18,10 @@ class userPage extends React.Component {
 
     onPageChanged(p) {
         this.props.changeCurrentPage(p);
+        this.props.toggleLoading(true);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=${this.props.pageSize}`)
             .then(response => {
+                this.props.toggleLoading(false);
                 this.props.setUsers(response.data.items)
                 this.props.setUsersCount(response.data.totalCount);
             });
@@ -33,7 +38,7 @@ class userPage extends React.Component {
         }
 
         return <div>
-
+            <img src ={this.props.isLoading == true && loading}></img>
             <div>
                 {pages.map((p) => <button className={this.props.currentPage === p && css.activePage}
                                           onClick={() => this.onPageChanged(p)}>{p}</button>)}
