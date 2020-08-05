@@ -13,7 +13,6 @@ function App(props) {
             <Content state={props.state}
                      store={props.store}
                      dispatch={props.dispatch}/>
-            <Footer/>
         </div>
     );
 }

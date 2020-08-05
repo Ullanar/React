@@ -1,4 +1,12 @@
 .header {
     grid-area: header;
-    background: aquamarine;
+    background: #0077C8;
+}
+
+.btnSignIn {
+    margin-left: 300px;
+}
+
+.btnSignUp{
+    margin-left: 5px;
 }

@@ -1,17 +1,17 @@
 .app-wrapper {
     display: grid;
-    grid-template-areas: "header header " "menu content " "footer footer ";
-    grid-template-columns: 200px 1fr;
-    grid-template-rows: 100px 1fr 100px;
+    grid-template-areas: "header header header" "menu content content";
+    grid-template-columns: 160px 1fr 1fr;
+    grid-template-rows: 60px 1fr;
 
     min-height: 100vh;
 }
 
 @media screen and (max-width: 600px) {
     .app-wrapper {
-        grid-template-areas: "header" "menu" "content" "footer";
+        grid-template-areas: "header" "menu" "content";
         grid-template-columns: 100%;
-        grid-template-rows: 100px 150px 1fr 100px;
+        grid-template-rows: 100px 150px 1fr;
 
     }
 }

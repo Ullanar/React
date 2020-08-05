@@ -1,6 +1,7 @@
 .content {
+    padding: 10px;
     grid-area: content;
-    background: blanchedalmond;
+    background: whitesmoke;
 }
 
 .image {

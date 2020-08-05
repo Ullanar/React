@@ -1,8 +1,9 @@
 .menu {
     text-align: center;
     grid-area: menu;
-    background: lightblue;
+    background: #DDDDDD;
     padding: 20px;
+
 }
 
 .contents {

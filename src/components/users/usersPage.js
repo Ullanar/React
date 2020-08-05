@@ -21,6 +21,7 @@ class userPage extends React.Component {
         this.props.toggleLoading(true);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=${this.props.pageSize}`)
             .then(response => {
+                debugger;
                 this.props.toggleLoading(false);
                 this.props.setUsers(response.data.items)
                 this.props.setUsersCount(response.data.totalCount);
@@ -37,12 +38,12 @@ class userPage extends React.Component {
 
         }
 
-        return <div>
-            <img src ={this.props.isLoading == true && loading}></img>
+        return <div className={css.main}>
             <div>
                 {pages.map((p) => <button className={this.props.currentPage === p && css.activePage}
                                           onClick={() => this.onPageChanged(p)}>{p}</button>)}
             </div>
+            <img className={css.loader} src={this.props.isLoading == true && loading}></img>
 
             {
                 this.props.users.map(user => <div key={user.id} className={css.wrapper}>

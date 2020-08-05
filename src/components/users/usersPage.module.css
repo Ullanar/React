@@ -1,3 +1,7 @@
+.main{
+    padding: 10px;
+}
+
 .img {
     width: 100px;
     height: 100px;
@@ -11,4 +15,10 @@
     color: orangered;
     font-weight: bold;
     font-size: large;
+}
+
+.loader{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
