@@ -44,45 +44,47 @@ class userPage extends React.Component {
         }
 
         return <div className={css.main}>
+
+            {/*Вывод страниц пользователей*/}
             <div>
                 {pages.map((p) => <button className={this.props.currentPage === p && css.activePage}
                                           onClick={() => this.onPageChanged(p)}>{p}</button>)}
             </div>
+
+
             <img className={css.loader} src={this.props.isLoading == true && loading}></img>
 
             {
-                this.props.users.map(user => <div key={user.id} className={css.wrapper}>
-      <span>
-          <div>{user.name}</div>
+                this.props.users.map(user =>
+                    <div key={user.id} className={css.wrapper}>
 
-          {/*Фото пользователя*/}
-          <div>
-                <NavLink to={"/profile/" + user.id}>
-              <img className={css.img} src={user.photos.small !== null ? user.photos.small : noUserPhoto}/>
-                </NavLink>
-          </div>
+                        <div>{user.name}</div>
 
-          {/*Кнопка подписаться/отписаться*/}
-          <div>
-              {user.followed ? <button onClick={() => this.props.unfollow(user.id)}>Unsubscribe</button>
-                  : <button onClick={() => this.props.follow(user.id)}> Subscribe </button>}
+                        {/*Фото пользователя*/}
+                        <div>
+                            <NavLink to={"/profile/" + user.id}>
+                                <img className={css.img}
+                                     src={user.photos.small !== null ? user.photos.small : noUserPhoto}/>
+                            </NavLink>
+                        </div>
 
-          </div>
-      </span>
-                        <span>
-          <span>
+                        {/*Кнопка подписаться/отписаться*/}
+                        <div>
+                            {user.followed ? <button onClick={() => this.props.unfollow(user.id)}>Unsubscribe</button>
+                                : <button onClick={() => this.props.follow(user.id)}> Subscribe </button>}
+                        </div>
 
-              <div>{'Status: ' + user.status}</div>
-          </span>
-
-      </span>
+                        {'Status: ' + user.status}
 
                     </div>
                 )}
+
+            {/*Вывод страниц пользователей*/}
             <div>
                 {pages.map((p) => <button className={this.props.currentPage === p && css.activePage}
                                           onClick={() => this.props.changeCurrentPage(p)}>{p}</button>)}
             </div>
+
         </div>
 
     }
