@@ -3,6 +3,7 @@ import css from './usersPage.module.css'
 import * as axios from "axios";
 import noUserPhoto from '../../Assets/noUserPhoto.png'
 import loading from '../../Assets/loading.gif'
+import {NavLink} from "react-router-dom";
 
 class userPage extends React.Component {
 
@@ -53,9 +54,15 @@ class userPage extends React.Component {
                 this.props.users.map(user => <div key={user.id} className={css.wrapper}>
       <span>
           <div>{user.name}</div>
+
+          {/*Фото пользователя*/}
           <div>
-          <img className={css.img} src={user.photos.small !== null ? user.photos.small : noUserPhoto}/>
+                <NavLink to={"/profile/" + user.id}>
+              <img className={css.img} src={user.photos.small !== null ? user.photos.small : noUserPhoto}/>
+                </NavLink>
           </div>
+
+          {/*Кнопка подписаться/отписаться*/}
           <div>
               {user.followed ? <button onClick={() => this.props.unfollow(user.id)}>Unsubscribe</button>
                   : <button onClick={() => this.props.follow(user.id)}> Subscribe </button>}
