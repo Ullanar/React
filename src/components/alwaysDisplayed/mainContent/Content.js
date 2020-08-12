@@ -6,6 +6,7 @@ import {Route} from "react-router-dom";
 import ProfileAreaContainer from "../../profile/profileAreaContainer";
 import MessagesAreaContainer from "../../messages/messagesAreaContainer";
 import UsersPageContainer from "../../users/usersPageContainer";
+import ProfileArea from "../../profile/profileArea";
 
 
 function Content(props) {

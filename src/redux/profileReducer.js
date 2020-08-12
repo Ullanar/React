@@ -1,3 +1,8 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const SET_USER_FROM_RESPONSE = 'SET-USER-FROM-RESPONSE'
+
+
 let defaultState = {
     postsContent: [
         {post: 'Hi, i am Post!', postId: '1',},
@@ -11,6 +16,7 @@ let defaultState = {
         education: 'Harvard',
     },
     newPostMessageDisplay: '',
+    userRes: null,
 };
 
 function profileReducer(state = defaultState, action) {
@@ -18,7 +24,7 @@ function profileReducer(state = defaultState, action) {
     switch (action.type) {
 
         // Добавление поста на стену
-        case 'ADD-POST': {
+        case ADD_POST: {
 
             let newPost = {
                 post: state.newPostMessageDisplay,
@@ -39,13 +45,17 @@ function profileReducer(state = defaultState, action) {
         }
 
         // Посимвольное отображение текста поста во время набора в AddNewPost
-        case 'UPDATE-NEW-POST-TEXT' : {
+        case UPDATE_NEW_POST_TEXT : {
             let stateCopy = {
                 ...state,
                 newPostMessageDisplay: action.newTextDisplay
             };
 
             return stateCopy;
+        }
+
+        case SET_USER_FROM_RESPONSE:{
+            return {...state, userRes: action.userPageFromResponse}
         }
 
         default:
@@ -56,3 +66,24 @@ function profileReducer(state = defaultState, action) {
 }
 
 export default profileReducer;
+
+
+export function addPostAC (){
+    return{
+        type: ADD_POST,
+    }
+}
+
+export function updateNewPostTextAC(newTextDisplay){
+    return{
+     type: UPDATE_NEW_POST_TEXT,
+     newTextDisplay: newTextDisplay
+    }
+}
+
+export function setUserFromResponseAC(userPage){
+    return{
+        type: SET_USER_FROM_RESPONSE,
+        userPageFromResponse: userPage
+    }
+}

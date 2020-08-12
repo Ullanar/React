@@ -1,6 +1,7 @@
 import React from 'react';
 import AddNewPost from "./addNewPost";
 import {connect} from "react-redux";
+import {addPostAC, updateNewPostTextAC} from "../../../redux/profileReducer";
 
 function mapStateToProps(state) {
     return {
@@ -11,10 +12,10 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         createNewPost: () => {
-            dispatch({type: 'ADD-POST'})
+            dispatch(addPostAC())
         },
         updateNewPostView: (newTextDisplay) => {
-            dispatch({type: 'UPDATE-NEW-POST-TEXT', newTextDisplay: newTextDisplay})
+            dispatch(updateNewPostTextAC(newTextDisplay))
         }
     }
 }
