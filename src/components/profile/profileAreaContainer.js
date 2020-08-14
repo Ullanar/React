@@ -42,7 +42,8 @@ function mapStateToProps(state) {
         // Массив всех постов на странице юзера
         userDescription: state.profilePage.userDescription,
         // Описание пользователя, выдающееся рядом с аватаром
-        userData: state.profilePage.userRes
+        userData: state.profilePage.userRes,
+        userID: state.auth.id
     }
 }
 

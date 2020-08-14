@@ -10,8 +10,8 @@ class userPage extends React.Component {
     componentDidMount() {
         this.props.toggleLoading(true);
         const url = `https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`;
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        axios.get(proxyurl + url)
+
+        axios.get(url)
             .then(response => {
                 this.props.toggleLoading(false);
                 this.props.setUsers(response.data.items)
@@ -23,8 +23,7 @@ class userPage extends React.Component {
         this.props.changeCurrentPage(p);
         this.props.toggleLoading(true);
         const url = `https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=${this.props.pageSize}`;
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        axios.get(proxyurl + url)
+        axios.get(url)
             .then(response => {
                 debugger;
                 this.props.toggleLoading(false);

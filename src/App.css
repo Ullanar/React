@@ -1,6 +1,6 @@
 .app-wrapper {
     display: grid;
-    grid-template-areas: "header header header" "menu content content";
+    grid-template-areas: "headerContainer headerContainer headerContainer" "menu content content";
     grid-template-columns: 160px 1fr 1fr;
     grid-template-rows: 60px 1fr;
 
