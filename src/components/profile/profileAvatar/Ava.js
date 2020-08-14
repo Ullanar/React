@@ -3,7 +3,7 @@ import css from "./Ava.module.css"
 
 
 function Avatar(props) {
-    debugger
+
     if (!props){
         return <h1>ЗАГРУЗКА БЛЯТЬ</h1>
     }

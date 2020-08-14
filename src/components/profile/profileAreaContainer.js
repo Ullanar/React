@@ -5,13 +5,16 @@ import {connect} from "react-redux";
 import * as axios from "axios";
 import userPage from "../users/usersPage";
 import {setUserFromResponseAC} from "../../redux/profileReducer";
+import withRouter from "react-router-dom/es/withRouter";
 
 
 
 class ProfileConnector extends React.Component{
 
     componentDidMount() {
-        axios.get('https://social-network.samuraijs.com/api/1.0//profile/2')
+        let userId = this.props.match.params.userId
+        if (!userId) userId = 9831
+        axios.get('https://social-network.samuraijs.com/api/1.0//profile/' + userId)
             .then(response => {
                 //this.props.toggleLoading(false);
                 this.props.setUserPage(response.data)
@@ -55,6 +58,9 @@ function mapDispatchToProps(dispatch){
 }
 
 
-let ProfileAreaContainer = connect(mapStateToProps, mapDispatchToProps)(ProfileConnector);
+let WithRouterDataContainerComponent = withRouter(ProfileConnector)
+
+
+let ProfileAreaContainer = connect(mapStateToProps, mapDispatchToProps)(WithRouterDataContainerComponent);
 
 export default ProfileAreaContainer;

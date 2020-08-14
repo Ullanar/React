@@ -16,7 +16,7 @@ function ProfileArea(props) {
         <div className={css.content}>
 
             <Avatar userData ={props.userData}/>
-            <Description userDescription = {props.userDescription}/>
+            <Description userData = {props.userData}/>
             <br/>
             <AddNewPostContainer/>
             <br/>

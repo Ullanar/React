@@ -12,7 +12,7 @@ import ProfileArea from "../../profile/profileArea";
 function Content(props) {
     return (
         <div className={css.content}>
-            <Route path='/profile' render={() => <ProfileAreaContainer/>}/>
+            <Route path='/profile/:userId?' render={() => <ProfileAreaContainer/>}/>
             <Route path='/messages' render={() => <MessagesAreaContainer state={props.state}
                                                                          dispatch={props.dispatch}/>}/>
             <Route path='/faq' render={() => <FaqContainer/>}/>
